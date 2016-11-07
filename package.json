@@ -1,0 +1,22 @@
+{
+  "name": "vue-advanced-programming",
+  "version": "1.0.0",
+  "description": "A collection of tricks in [Vue.js](https://github.com/vuejs/vue).",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 -m http.server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HerringtonDarkholme/vue-advanced-programming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HerringtonDarkholme/vue-advanced-programming/issues"
+  },
+  "homepage": "https://github.com/HerringtonDarkholme/vue-advanced-programming#readme",
+  "dependencies": {
+    "vue": "^2.0.5"
+  }
+}
