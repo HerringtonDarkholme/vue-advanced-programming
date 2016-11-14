@@ -1,3 +1,8 @@
+const mitm = {
+  template: `<div>MITM<br/><slot></slot></div>`,
+  name: 'mitm'
+}
+
 const repeat = {
   template: `
 <p>
@@ -8,8 +13,15 @@ const repeat = {
   <v-outlet :$ctx="{i: repeat}" v-for="i in repeat">
     <span>I'm default content!<br/></span>
   </v-outlet>
+  <mitm>
+    <v-outlet :$ctx="{i: repeat}" v-for="i in repeat" :bind-to="_self">
+      <span>I wil not be shown!<br/></span>
+    </v-outlet>
+  </mitm>
 </p>`,
-  data: () => ({repeat: 3})
+  data: () => ({repeat: 3}),
+  components: {mitm},
+  name: 'repeat'
 }
 
 new Vue({

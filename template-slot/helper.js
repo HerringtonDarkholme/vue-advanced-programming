@@ -1,18 +1,19 @@
-Vue.component('v-template', {
-  created() {
-    this.$options.render = h => h('')
-  }
-})
+Vue.component('v-template', {})
+
 Vue.component('v-outlet', {
   props: {
     source: {
       type: String,
       default: 'default',
     },
+    bindTo: {
+      type: Vue
+    },
     $ctx: {}
   },
   created() {
-    let slots = this && this.$parent && this.$parent.$slots
+    let $parent = this.bindTo || this.$parent
+    let slots = $parent && $parent.$slots
     let vnodes = slots && slots[this.source]
     let vnode = vnodes && vnodes[0]
     let template = vnode && vnode.data && vnode.data.inlineTemplate
