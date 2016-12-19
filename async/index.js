@@ -1,9 +1,9 @@
 function Foo(resolve) {
-  // setTimeout(() => {
+  setTimeout(() => {
     resolve({
       template: '<div class="foo">foo</div>'
     })
-  // })
+  })
 }
 
 const router = new VueRouter({
